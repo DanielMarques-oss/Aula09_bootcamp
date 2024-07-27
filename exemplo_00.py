@@ -1,18 +1,13 @@
 from loguru import logger
+from utils import log_decorator
 import sys
 
-logger.add("file_{time}.log", level="CRITICAL")
+#logger.add("file_{time}.log", level="CRITICAL")
 
-
+@log_decorator
 def soma(x, y):
-    try:
-        logger.info(x)
-        logger.warning(y)
-        logger.info(x + y)
-
-    except:
-        logger.critical("Favor digitar números para ambas as entradas")
+    return x + y
 
 soma(3, 4)
-soma(1, 2)
+soma(5, 2)
 soma(2, "1")
